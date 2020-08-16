@@ -1,0 +1,38 @@
+use airfone;
+#for displaying all tickets in descending order
+select * from tickets order by ticketId desc;
+
+select * from currentPlan;
+select * from customerDetails;
+desc customerdetails;
+select * from plans;
+select * from logindetails;
+
+select dob from customerdetails;
+update tickets set status=true;
+#Inserting new user values
+insert into logindetails values('7019176449','tushardeshpande1998@gmail.com','123');
+insert into customerdetails values('tushar','1998-11-01','Male','address','tushardeshpande1998@gmail.com','7019176449');
+insert into currentplan values('7019176449',300,'365 days');
+
+
+#TO DISPLAY ALL CUSTOMERS
+select cd.phone,cd.cust_name,p.planCategory,p.planName,cp.endDate from customerDetails cd inner join
+ currentPlan cp inner join plans p on cd.phone=cp.phone and cp.planId=p.planId;
+ 
+#TO DISPLAY CUSTOMER DETAILS OF AN INDIVIDUAL
+select * from customerdetails where phone='7019176449';
+
+
+select cust_name,gender,phone,email,address from customerDetails where phone='9945782683';
+
+
+
+
+
+
+
+
+
+
+
